@@ -3,8 +3,9 @@ import cosillas.*
 
 program pokemonBattle {
 	game.title("Pokemon Battle")
-	game.height(6)
-	game.width(5)
+	game.height(3)
+	game.width(6)
+	game.boardGround("GrassField.png")
 	batalla.inicio()
 	game.start()
 }

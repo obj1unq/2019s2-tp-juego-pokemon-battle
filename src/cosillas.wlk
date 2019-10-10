@@ -8,13 +8,13 @@ object suJuegoDebe {
 
 
 object may {
-	var property position = game.origin()	
+	var property position = game.at(1,0)	
 	
 	method image() {return "RS_May_Back.png"}
 }
 
 object brendan {
-	var property position = game.at(4,4)
+	var property position = game.at(4,1)
 	
 	method image() {return "Spr_Rs_Brendan.png"}
 	
