@@ -1,5 +1,10 @@
 import wollok.game.*
+import cosillas.*
 
-program nombreDeSuJuego {
+program pokemonBattle {
+	game.title("Pokemon Battle")
+	game.height(6)
+	game.width(5)
+	batalla.inicio()
 	game.start()
 }

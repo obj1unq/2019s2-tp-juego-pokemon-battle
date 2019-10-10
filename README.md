@@ -6,10 +6,8 @@
 
 Integrantes:
 
-- Juana Azurduy
-- Alicia Moreau
-- Joe Balachi
-- Benedict Arnold
+- Maximiliano Souto
+- Federico Torrekens
 
 #### Descripción e instrucciones
 
