@@ -31,10 +31,6 @@ class Pokemon {
 	
 	method image() { return ""}
 	method position() {return game.at(0,0)}
-	
-	
-	
-	
 	 
 }
 
@@ -62,7 +58,7 @@ object sceptile {
 
 object batalla {
 	method inicio() {
-		game.addVisual(may)
-		game.addVisual(brendan)
+		game.addVisual(blaziken)
+		game.addVisual(sceptile)
 	}
 }

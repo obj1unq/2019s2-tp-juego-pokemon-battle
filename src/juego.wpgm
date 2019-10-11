@@ -7,5 +7,6 @@ program pokemonBattle {
 	game.width(6)
 	game.boardGround("GrassField.png")
 	batalla.inicio()
+	game.showAttributes(blaziken)
 	game.start()
 }
