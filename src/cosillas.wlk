@@ -1,22 +1,23 @@
 import wollok.game.*
 
-object suJuegoDebe {
-	method tenerPolimorfismo() {
-		return 'y no repetir lógica!'
-	}
+class PokemonTrainer {
+	var property pokemon = []
+	method position() {return game.at(0,0)}
+	method image() { return ""}
 }
 
-
 object may {
-	var property position = game.at(1,0)	
+	const may = new PokemonTrainer(pokemon = [blaziken] )
 	
-	method image() {return "RS_May_Back.png"}
+	method	position() {return  game.at (1,0)}		
+	method  image() {return "RS_May_Back.png"}
 }
 
 object brendan {
-	var property position = game.at(4,1)
+	const brendan = new PokemonTrainer (pokemon = [sceptile] )
 	
-	method image() {return "Spr_Rs_Brendan.png"}
+	method 	position() { return game.at (4,1) }
+	method  image() {return "Spr_Rs_Brendan.png"}
 	
 	
 }
@@ -61,7 +62,7 @@ object sceptile {
 
 object batalla {
 	method inicio() {
-		game.addVisual(blaziken)
-		game.addVisual(sceptile)
+		game.addVisual(may)
+		game.addVisual(brendan)
 	}
 }

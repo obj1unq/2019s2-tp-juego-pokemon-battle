@@ -1,6 +1,6 @@
-### Nombre del Juego
+### Nombre del Juego: Pokemon Battle 
 
-![capturaJuego](assets/capturaJuego.png)
+![capturaJuego](assets/AlphaPokemonBattle.png)
 
 #### Grupo: Nombre del Grupo
 
@@ -10,5 +10,6 @@ Integrantes:
 - Federico Torrekens
 
 #### Descripción e instrucciones
+En este juego se simula una batalla pokemon entre dos entrenadores en modalidad singles 6 vs 6
 
-(completar)
+
