@@ -23,6 +23,7 @@ object brendan {
 }
 
 class Pokemon {
+	var property  level = 0
 	var property  hp = 0
 	var property  attack = 0
 	var property  defense = 0
@@ -35,7 +36,8 @@ class Pokemon {
 }
 
 object blaziken {
-	const blaziken = new Pokemon(hp = 364, 
+	const blaziken = new Pokemon(level = 100,
+		                         hp = 364, 
 		                         attack = 372, 
 		                         defense = 262, 
 		                         speed = 284, 
@@ -46,7 +48,8 @@ object blaziken {
 }
 
 object sceptile {
-	const sceptile = new Pokemon (hp = 344,
+	const sceptile = new Pokemon (level = 100,
+		                          hp = 344,
 		                          attack = 339,
 		                          defense = 295,
 		                          speed = 372,
@@ -136,6 +139,12 @@ object earthquake {
 		                           effect = 0,
 		                           accuracy = 100
 		                           ) 	
+}
+
+object damage {
+	method damage() {
+	 ( ( ( ( (2*pokemon.level() ) /5 )+2) *attack.power()*(pokemon.attack()/pokemon.defense()))/50)+2
+	}
 }
 
 object batalla {
