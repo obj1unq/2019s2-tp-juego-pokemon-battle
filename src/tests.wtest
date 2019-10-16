@@ -1,6 +1,9 @@
+import PokemonTrainer.*
+import Pokemon.*
+import Attacks.*
 
-test "¡sep, vale hacer tests también!" {
+test "May tiene a Blaziken" {
 
-	assert.that(false)
+	assert.that(may.pokemon().contains(blaziken))
 
 }

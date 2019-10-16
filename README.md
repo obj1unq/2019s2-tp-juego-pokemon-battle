@@ -1,6 +1,6 @@
-### Nombre del Juego: Pokemon Battle 
+### Pokemon Battle 
 
-![capturaJuego](assets/AlphaPokemonBattle.png)
+![capturaJuego](assets/AlphaPokemonBattle.PNG)
 
 #### Grupo: Nombre del Grupo
 

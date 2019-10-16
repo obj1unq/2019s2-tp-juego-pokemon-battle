@@ -1,12 +1,14 @@
 import wollok.game.*
-import cosillas.*
+import PokemonTrainer.*
+import Pokemon.*
+import Attacks.*
 
 program pokemonBattle {
 	game.title("Pokemon Battle")
 	game.height(3)
 	game.width(6)
 	game.boardGround("GrassField.png")
-	batalla.inicio()
-	game.showAttributes(blaziken)
+	game.addVisual(may)
+	game.addVisual(brendan)
 	game.start()
 }
