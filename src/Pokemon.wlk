@@ -1,14 +1,14 @@
 import Attacks.*
 import wollok.game.*
 class Pokemon {
-	const property name
-	var property  hp 
-	var property  attack 
-	var property  defense 
-	var property  speed 
+	const property  name
+	  var property  hp 
+	  var property  attack 
+	  var property  defense 
+	  var property  speed 
 	const property attacks = []
-	var property image
-	var property position
+	  var property image
+	  var property position
 	
 }
 

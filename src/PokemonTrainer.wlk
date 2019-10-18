@@ -3,9 +3,9 @@ import wollok.game.*
 
 class PokemonTrainer {
 	const property name
-	var property pokemon = []
-	var property image
-	var property position
+	          var  pokemon = []
+	  var property image
+	  var property position
 	
 }
 

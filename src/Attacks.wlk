@@ -1,4 +1,5 @@
 import Pokemon.*
+import wollok.game.*
 
 class Attack {
 	const property name 
@@ -45,7 +46,7 @@ const blazeKick = new Attack (name = "Blaze kick",
 	const leafStorm = new Attack (name = "Leaf storm",
 		 						  power = 130, 
 		 						  type = "Grass",
-		 						  effect = sceptile.attack() * 1/4,
+		 						  effect = 0 /* sceptile.attack() * 1/4*/,
 		 						  accuracy = 90
 		 						  )
 

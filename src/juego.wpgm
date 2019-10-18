@@ -8,7 +8,7 @@ program pokemonBattle {
 	game.height(3)
 	game.width(6)
 	game.boardGround("GrassField.png")
-	game.addVisual(may)
-	game.addVisual(brendan)
+	game.addVisual(sceptile)
+	game.addVisual(blaziken)
 	game.start()
 }
