@@ -6,7 +6,7 @@ class Attack {
 	const property power 
 	const property type 
 	const property effect 
-	  var property accuracy 
+	var property accuracy 
 	
 }
 
@@ -29,7 +29,10 @@ const blazeKick = new Attack (name = "Blaze kick",
 	const bulkUp = new Attack (name = "Bulk up",
 		                       power = 0,
 		                       type = "Fighting",
-		                       effect = 0 /*blaziken.attack() *0.5 && blaziken.defense()*0.5*/,
+		                       effect = { pokemon => 
+		                       	pokemon.attack() *0.5
+		                       	pokemon.defense()*0.5
+		                       },
 		                       accuracy = 100
 		                       )	
 
@@ -72,3 +75,23 @@ const blazeKick = new Attack (name = "Blaze kick",
 		                           effect = 0,
 		                           accuracy = 100
 		                           ) 	
+		                           
+		                           
+		                          
+object empezarBatalla {
+	
+	method iniciar() { config.configurarTeclas() }
+}
+
+
+object config {
+	
+	method configurarTeclas() {
+		keyboard.a().onPressDo({ may.elegirPokemon(0)})
+	}
+}
+
+
+
+
+

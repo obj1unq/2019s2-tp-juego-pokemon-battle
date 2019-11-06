@@ -10,5 +10,6 @@ program pokemonBattle {
 	game.boardGround("GrassField.png")
 	game.addVisual(sceptile)
 	game.addVisual(blaziken)
+	empezarBatalla.iniciar()
 	game.start()
 }
