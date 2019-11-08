@@ -2,13 +2,16 @@ import wollok.game.*
 import PokemonTrainer.*
 import Pokemon.*
 import Attacks.*
+import Battle.*
 
 program pokemonBattle {
 	game.title("Pokemon Battle")
 	game.height(3)
 	game.width(6)
 	game.boardGround("GrassField.png")
-	game.addVisual(sceptile)
-	game.addVisual(blaziken)
+	battle.begin()
+	battle.sendPokemon()
 	game.start()
 }
+
+

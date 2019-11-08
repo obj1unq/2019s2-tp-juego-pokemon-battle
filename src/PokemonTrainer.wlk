@@ -21,3 +21,5 @@ class PokemonTrainer {
 		                                image = "Spr_Rs_Brendan.png",
 	                                    position = game.at (4,1)
 	                                    )
+	                                    
+	                                    
