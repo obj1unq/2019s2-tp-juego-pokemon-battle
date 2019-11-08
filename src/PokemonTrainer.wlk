@@ -6,6 +6,10 @@ class PokemonTrainer {
 	          var  pokemon = []
 	  var property image
 	  var property position
+	  
+	  method elegirPokemon(numero) {
+	  	pokemon.get(numero)
+	  }
 	
 }
 

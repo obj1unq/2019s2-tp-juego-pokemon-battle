@@ -1,5 +1,6 @@
 import Attacks.*
 import wollok.game.*
+
 class Pokemon {
 	const property  name
 	  var property  hp 
@@ -9,6 +10,19 @@ class Pokemon {
 	const property attacks = []
 	  var property image
 	  var property position
+	  
+	  method atacar(ataque,pokemon) {
+	  	 if(ataque.power() > pokemon.hp()) { game.removeVisual(pokemon) }
+	  	 else { pokemon.recibirDanio(ataque.power()) }
+	  }
+	
+	  method recibirDanio(cantidad) {
+	  	 hp = hp - cantidad
+	  }
+}
+
+
+class PokemonRival inherits Pokemon {
 	
 }
 

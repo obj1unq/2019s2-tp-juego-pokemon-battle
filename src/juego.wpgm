@@ -10,7 +10,8 @@ program pokemonBattle {
 	game.width(6)
 	game.boardGround("GrassField.png")
 	battle.begin()
-	battle.sendPokemon()
+	battle.rivalSendsPokemon()
+	battle.playerSendsPokemon()
 	game.start()
 }
 
