@@ -22,7 +22,7 @@ class Pokemon {
 }
 
 
-class PokemonRival inherits Pokemon {
+class FoePokemon inherits Pokemon {
 	
 }
 
