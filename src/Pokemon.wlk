@@ -1,4 +1,4 @@
-import Attacks.*
+ import Attacks.*
 import wollok.game.*
 
 class Pokemon {
@@ -11,10 +11,19 @@ class Pokemon {
 	  var property image
 	  var property position
 	  
-	  method atacar(ataque,pokemon) {
-	  	 if(ataque.power() > pokemon.hp()) { game.removeVisual(pokemon) }
-	  	 else { pokemon.recibirDanio(ataque.power()) }
-	  }
+	  
+	 method atacar(ataque,pokemon) {
+	 	if( damage.damage(self,ataque,pokemon) >= pokemon.hp() ) {
+	 	  game.schedule(2000,{=> game.removeVisual(pokemon)} )
+	 	  ataque.effect(self)
+	 	}
+	 	else {
+	 		   pokemon.recibirDanio(damage.damage(self,ataque,pokemon)) 
+	 		   game.schedule(1500,{=> game.removeVisual(pokemon)} )
+	 		   game.schedule(2000,{=> game.addVisual(pokemon)} )
+	 		   ataque.effect(self)
+	 	}
+	 }
 	
 	  method recibirDanio(cantidad) {
 	  	 hp = hp - cantidad
@@ -37,7 +46,7 @@ class FoePokemon inherits Pokemon {
 		                         position = game.at(1,0))
 
 
-	const sceptile = new Pokemon (name = "Sceptile",
+const sceptile = new FoePokemon (name = "Sceptile",
 		                          hp = 344,
 		                          attack = 339,
 		                          defense = 295,
@@ -45,3 +54,6 @@ class FoePokemon inherits Pokemon {
 		                          attacks = [leafStorm, dragonPulse, leechSeed, earthquake ],
                                   image = "Sceptile.png",
                                   position = game.at(4,1))
+                                  
+  // intente hacer de nuevo el de atacar. Hay que separarlo en metodos mas chicos
+  // sceptile como FoePokemon

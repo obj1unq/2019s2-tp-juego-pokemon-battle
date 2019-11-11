@@ -6,7 +6,8 @@ import wollok.game.*
 object battle {
 
   method begin() {
-	game.addVisual(may)
+  	config.configurarTeclas()
+	game.addVisual(may) 
 	game.addVisual(brendan)
   }	
   
@@ -24,3 +25,15 @@ object battle {
  	game.schedule(5500,{=> game.addVisual(blaziken)})
  }
 }
+
+
+
+object config {
+	
+	method configurarTeclas() {
+		keyboard.a().onPressDo({ blaziken.atacar(blaziken,blazeKick, sceptile) })
+	}
+}
+
+/*  En el metodo begin,  agregue el configurar teclas del objeto config.
+   Falta completar el methodo configurar teclas */
