@@ -6,7 +6,6 @@ import wollok.game.*
 object battle {
 
   method begin() {
-  	config.configurarTeclas()
 	game.addVisual(may) 
 	game.addVisual(brendan)
   }	
@@ -31,9 +30,15 @@ object battle {
 object config {
 	
 	method configurarTeclas() {
-		keyboard.a().onPressDo({ blaziken.atacar(blaziken,blazeKick, sceptile) })
+		keyboard.a().onPressDo({ blaziken.atacar(blazeKick, sceptile) })
+		keyboard.b().onPressDo({ blaziken.atacar(highJumpKick, sceptile) })
+		keyboard.c().onPressDo({ bulkUp.atacar(blazeKick, sceptile) })
 	}
 }
 
 /*  En el metodo begin,  agregue el configurar teclas del objeto config.
    Falta completar el methodo configurar teclas */
+   
+   
+   
+   

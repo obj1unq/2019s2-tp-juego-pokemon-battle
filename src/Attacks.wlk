@@ -5,7 +5,7 @@ class Attack {
 	const property name 
 	const property power 
 	const property type 
-	const property effect 
+	var property effect 
     var property accuracy 
 	 
 	 method efectoBulkUp(pokemon) {
@@ -33,8 +33,8 @@ const blazeKick = new Attack (name = "Blaze kick",
 	const bulkUp = new Attack (name = "Bulk up",
 		                       power = 0,
 		                       type = "Fighting",
-		                       effect =  { pokemon => bulkUp.efectoBulkUp(pokemon)
-		                                  } ,
+		                       effect =  { pokemon =>  pokemon.attack(pokemon.attack() * 0.5) 
+	                                     	           pokemon.defense(pokemon.defense() * 0.5) } ,
 		                       accuracy = 100
 		                       )	
 
@@ -42,7 +42,8 @@ const blazeKick = new Attack (name = "Blaze kick",
 	const braveBird = new Attack (name = "Brave bird",
 		                          power = 120,
 		                          type = "Flying",
-		                          effect = 0/* 1/3 of damage done*/,
+		                          effect = { pokemon => pokemon.hp( pokemon.hp() - ( pokemon.attack().power() * 1/3 ) ) }
+		                          ,
 		                          accuracy = 100
 		                          )
 
@@ -84,7 +85,7 @@ const blazeKick = new Attack (name = "Blaze kick",
 	 return ( ( ( ( (2* pokemon.level() ) /5 ) +2 ) * attack.power() * (pokemon.attack() /foePokemon.defense())) /50) +2
 	}
 }
-
+                
 /* puse pokemon , foePokemon y attack como parametros en el metodo damage .
  * Tambien cambie el efecto bulkUp haciendo un metodo
  */

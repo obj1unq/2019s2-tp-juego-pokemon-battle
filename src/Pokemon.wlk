@@ -7,6 +7,7 @@ class Pokemon {
 	  var property  attack 
 	  var property  defense 
 	  var property  speed 
+	  var property level 
 	const property attacks = []
 	  var property image
 	  var property position
@@ -41,6 +42,7 @@ class FoePokemon inherits Pokemon {
 		                         attack = 372, 
 		                         defense = 262, 
 		                         speed = 284, 
+		                         level = 5,
 		                         attacks = [blazeKick, highJumpKick, bulkUp, braveBird],
 		                         image ="Blaziken-Back.png",
 		                         position = game.at(1,0))
@@ -51,6 +53,7 @@ const sceptile = new FoePokemon (name = "Sceptile",
 		                          attack = 339,
 		                          defense = 295,
 		                          speed = 372,
+		                          level = 7,
 		                          attacks = [leafStorm, dragonPulse, leechSeed, earthquake ],
                                   image = "Sceptile.png",
                                   position = game.at(4,1))

@@ -12,6 +12,7 @@ program pokemonBattle {
 	battle.begin()
 	battle.rivalSendsPokemon()
 	battle.playerSendsPokemon()
+	config.configurarTeclas()
 	game.start()
 }
 
