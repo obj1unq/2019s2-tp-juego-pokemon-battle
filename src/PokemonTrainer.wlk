@@ -3,25 +3,34 @@ import wollok.game.*
 
 class PokemonTrainer {
 	const property name
-	          var  pokemon = []
+	  var property pokemonDeTurno
+	  var  pokemons = []
 	  var property image
 	  var property position
 	  
-	  method elegirPokemon(numero) {
-	  	pokemon.get(numero)
+	  method elegirPokemon(pokemon) {
+	  	game.removeVisual(pokemonDeTurno)
+	  	pokemonDeTurno = pokemon
+	  	game.addVisual(pokemon)
+	  }
+	  
+	  method sacarPokemonDeTurnoSiCorresponde() {
+	  	 if(pokemonDeTurno.hp() <= 0) { pokemons.filter({ pokemon => pokemon == pokemonDeTurno }) }
 	  }
 	
 }
 
     const may = new PokemonTrainer(name = "May",
-		                           pokemon =[blaziken],		
+    	                           pokemonDeTurno = blaziken,
+		                           pokemons =[blaziken],		
 	                               image = "RS_May_Back.png",
 	                               position = game.at (1,0)
 	                               )
 
 
 	const brendan = new PokemonTrainer (name = "Brendan",
-		                                pokemon = [sceptile],
+		                                pokemonDeTurno = sceptile,
+		                                pokemons = [sceptile],
 		                                image = "Spr_Rs_Brendan.png",
 	                                    position = game.at (4,1)
 	                                    )

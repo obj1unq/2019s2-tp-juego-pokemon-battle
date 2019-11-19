@@ -23,6 +23,16 @@ object battle {
  	game.schedule(5000,{=> game.removeVisual(may)} )
  	game.schedule(5500,{=> game.addVisual(blaziken)})
  }
+ 
+ method pelear(ataque) {
+ 	may.elegirPokemon(may.pokemonDeTurno())
+ 	brendan.elegirPokemon(brendan.pokemonDeTurno())
+ 	may.pokemonDeTurno().atacar(ataque,brendan.pokemonDeTurno())
+ 	brendan.sacarPokemonDeTurnoSiCorresponde()
+ 	brendan.pokemonDeTurno().atacar(brendan.pokemonDeTurno().attacks().any())
+ 	may.sacarPokemonDeTurnoSiCorresponde() 
+ }
+ 
 }
 
 
@@ -30,9 +40,9 @@ object battle {
 object config {
 	
 	method configurarTeclas() {
-		keyboard.a().onPressDo({ blaziken.atacar(blazeKick, sceptile) })
-		keyboard.b().onPressDo({ blaziken.atacar(highJumpKick, sceptile) })
-		keyboard.c().onPressDo({ bulkUp.atacar(blazeKick, sceptile) })
+		keyboard.a().onPressDo({ battle.pelear(blazeKick) })
+		keyboard.b().onPressDo({ battle.pelear(highJumpKick) })
+		keyboard.c().onPressDo({ battle.pelear(bulkUp) }) 
 	}
 }
 

@@ -12,6 +12,7 @@ class Pokemon {
 	  var property image
 	  var property position
 	  
+	
 	  
 	 method atacar(ataque,pokemon) {
 	 	if( damage.damage(self,ataque,pokemon) >= pokemon.hp() ) {
@@ -20,11 +21,12 @@ class Pokemon {
 	 	}
 	 	else {
 	 		   pokemon.recibirDanio(damage.damage(self,ataque,pokemon)) 
-	 		   game.schedule(1500,{=> game.removeVisual(pokemon)} )
+	 		   game.schedule(2000,{=> game.removeVisual(pokemon)} )
 	 		   game.schedule(2000,{=> game.addVisual(pokemon)} )
-	 		   ataque.effect(self)
+	 		   ataque.effect(self)   
 	 	}
 	 }
+	 
 	
 	  method recibirDanio(cantidad) {
 	  	 hp = hp - cantidad
@@ -34,6 +36,9 @@ class Pokemon {
 
 class FoePokemon inherits Pokemon {
 	
+	override method atacar(ataque,pokemon) {
+		if(hp > 0) { super(ataque,pokemon) }
+	}
 }
 
 
