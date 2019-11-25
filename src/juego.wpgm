@@ -9,6 +9,7 @@ program pokemonBattle {
 	game.height(3)
 	game.width(6)
 	game.boardGround("GrassField.png")
+	game.sound("Pokemon Ruby and Sapphire - Rival Battle Theme.mp3")
 	battle.begin()
 	battle.rivalSendsPokemon()
 	battle.playerSendsPokemon()
