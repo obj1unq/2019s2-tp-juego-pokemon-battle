@@ -5,28 +5,46 @@ class Pokemon {
 	const property  name
 	  var property  hp 
 	  var property  attack 
-	  var property  defense 
-	  var property  speed 
-	  var property level 
+	  var property  defense  
 	const property attacks = []
 	  var property image
 	  var property position
 	  
+	  
+	 method primerAtaque() {
+	 	attacks.first()
+	 }
+	 
+	 method segundoAtaque() {
+	 	attacks.remove(attacks.first()).first()
+	 }
+	 
+	 method tercerAtaque() {
+	 	attacks.copyWhitout(attacks.first()).copyWithout(attacks.first()).first()
+	 }
+	 
+	 method ultimoAtaque() {
+	 	attacks.last()
+	 }
 	
 	  
 	 method atacar(ataque,pokemon) {
-	 	if( damage.damage(self,ataque,pokemon) >= pokemon.hp() ) {
-	 	  game.schedule(2000,{=> game.removeVisual(pokemon)} )
-	 	  ataque.effect(self)
+	 	if( (self.attack() - pokemon.defense()) > 100) { 
+	 		pokemon.recibirDanio(ataque.power() * 2)
+	 	    self.sacarOponenteSiEsDerrotado(pokemon)
 	 	}
-	 	else {
-	 		   pokemon.recibirDanio(damage.damage(self,ataque,pokemon)) 
-	 		   game.schedule(2000,{=> game.removeVisual(pokemon)} )
-	 		   game.schedule(2000,{=> game.addVisual(pokemon)} )
-	 		   ataque.effect(self)   
+	 	
+	 	else {  pokemon.recibirDanio(ataque.power()) 
+	 		    self.sacarOponenteSiEsDerrotado(pokemon)
 	 	}
 	 }
 	 
+	 
+	 method sacarOponenteSiEsDerrotado(pokemon) { 
+	 	if(pokemon.hp() <= 0) { game.schedule(4000,{=> game.removeVisual(pokemon) } ) }
+	 	else { game.schedule(4000,{=> game.removeVisual(pokemon) } )
+            game.schedule(4500,{ => game.addVisual(pokemon) }) }
+	 }
 	
 	  method recibirDanio(cantidad) {
 	  	 hp = hp - cantidad
@@ -36,18 +54,13 @@ class Pokemon {
 
 class FoePokemon inherits Pokemon {
 	
-	override method atacar(ataque,pokemon) {
-		if(hp > 0) { super(ataque,pokemon) }
-	}
 }
 
 
    const blaziken = new Pokemon(name = "Blaziken",
 		                         hp = 364, 
 		                         attack = 372, 
-		                         defense = 262, 
-		                         speed = 284, 
-		                         level = 5,
+		                         defense = 230,
 		                         attacks = [blazeKick, highJumpKick, bulkUp, braveBird],
 		                         image ="Blaziken-Back.png",
 		                         position = game.at(1,0))
@@ -55,13 +68,10 @@ class FoePokemon inherits Pokemon {
 
 const sceptile = new FoePokemon (name = "Sceptile",
 		                          hp = 344,
-		                          attack = 339,
-		                          defense = 295,
-		                          speed = 372,
-		                          level = 7,
+		                          attack = 325,
+		                          defense = 210,
 		                          attacks = [leafStorm, dragonPulse, leechSeed, earthquake ],
                                   image = "Sceptile.png",
                                   position = game.at(4,1))
                                   
-  // intente hacer de nuevo el de atacar. Hay que separarlo en metodos mas chicos
-  // sceptile como FoePokemon
+ 

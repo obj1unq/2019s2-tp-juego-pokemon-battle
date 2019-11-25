@@ -25,12 +25,8 @@ object battle {
  }
  
  method pelear(ataque) {
- 	may.elegirPokemon(may.pokemonDeTurno())
- 	brendan.elegirPokemon(brendan.pokemonDeTurno())
- 	may.pokemonDeTurno().atacar(ataque,brendan.pokemonDeTurno())
- 	brendan.sacarPokemonDeTurnoSiCorresponde()
- 	brendan.pokemonDeTurno().atacar(brendan.pokemonDeTurno().attacks().any())
- 	may.sacarPokemonDeTurnoSiCorresponde() 
+    blaziken.atacar(ataque,sceptile)
+    sceptile.atacar(sceptile.attacks().any(),blaziken)
  }
  
 }
@@ -46,9 +42,7 @@ object config {
 	}
 }
 
-/*  En el metodo begin,  agregue el configurar teclas del objeto config.
-   Falta completar el methodo configurar teclas */
-   
+
    
    
    

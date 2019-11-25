@@ -12,10 +12,11 @@ class PokemonTrainer {
 	  	game.removeVisual(pokemonDeTurno)
 	  	pokemonDeTurno = pokemon
 	  	game.addVisual(pokemon)
+	  	
 	  }
 	  
-	  method sacarPokemonDeTurnoSiCorresponde() {
-	  	 if(pokemonDeTurno.hp() <= 0) { pokemons.filter({ pokemon => pokemon == pokemonDeTurno }) }
+	  method sacarPokemon() {
+	  	 if(pokemonDeTurno.hp() <= 0) { game.removeVisual(pokemonDeTurno) }
 	  }
 	
 }
