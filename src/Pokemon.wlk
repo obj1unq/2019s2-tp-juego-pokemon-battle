@@ -12,38 +12,41 @@ class Pokemon {
 	  
 	  
 	 method primerAtaque() {
-	 	attacks.first()
+	 	return attacks.first()
 	 }
 	 
 	 method segundoAtaque() {
-	 	attacks.remove(attacks.first()).first()
+	 	 attacks.remove(attacks.first()).first()
 	 }
 	 
 	 method tercerAtaque() {
-	 	attacks.copyWhitout(attacks.first()).copyWithout(attacks.first()).first()
+	 	 attacks.copyWhitout(attacks.first()).copyWithout(attacks.first()).first()
 	 }
 	 
 	 method ultimoAtaque() {
-	 	attacks.last()
+	 	return attacks.last()
 	 }
-	
-	  
+	 
 	 method atacar(ataque,pokemon) {
-	 	if( (self.attack() - pokemon.defense()) > 100) { 
+	 	if(self.hp() > 0) { self.formulaDeDanio(ataque,pokemon) }
+	 }
+	 	  
+	 method formulaDeDanio(ataque,pokemon) {
+	 	if( (self.attack() - pokemon.defense()) > 100 ) { 
 	 		pokemon.recibirDanio(ataque.power() * 2)
 	 	    self.sacarOponenteSiEsDerrotado(pokemon)
 	 	}
-	 	
-	 	else {  pokemon.recibirDanio(ataque.power()) 
-	 		    self.sacarOponenteSiEsDerrotado(pokemon)
+	 	else  {  
+	 		pokemon.recibirDanio(ataque.power()) 
+	 	    self.sacarOponenteSiEsDerrotado(pokemon)
 	 	}
 	 }
 	 
 	 
 	 method sacarOponenteSiEsDerrotado(pokemon) { 
-	 	if(pokemon.hp() <= 0) { game.schedule(4000,{=> game.removeVisual(pokemon) } ) }
-	 	else { game.schedule(4000,{=> game.removeVisual(pokemon) } )
-            game.schedule(4500,{ => game.addVisual(pokemon) }) }
+	 	if(pokemon.hp() <= 0) { game.schedule(3000,{=> game.removeVisual(pokemon) } ) }
+	 	else { game.schedule(3000,{=> game.removeVisual(pokemon) } )
+            game.schedule(3500,{ => game.addVisual(pokemon) }) }
 	 }
 	
 	  method recibirDanio(cantidad) {

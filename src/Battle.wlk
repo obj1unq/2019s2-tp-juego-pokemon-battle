@@ -24,9 +24,9 @@ object battle {
  	game.schedule(5500,{=> game.addVisual(blaziken)})
  }
  
- method pelear(ataque) {
+ method pelear(ataque,ataque2) {
     blaziken.atacar(ataque,sceptile)
-    sceptile.atacar(sceptile.attacks().any(),blaziken)
+    sceptile.atacar(ataque2,blaziken)
  }
  
 }
@@ -36,9 +36,12 @@ object battle {
 object config {
 	
 	method configurarTeclas() {
-		keyboard.a().onPressDo({ battle.pelear(blazeKick) })
-		keyboard.b().onPressDo({ battle.pelear(highJumpKick) })
-		keyboard.c().onPressDo({ battle.pelear(bulkUp) }) 
+		
+		// Ataques de blaziken 
+		keyboard.a().onPressDo({ battle.pelear(blazeKick,sceptile.primerAtaque()) })
+		keyboard.b().onPressDo({ battle.pelear(highJumpKick,dragonPulse) })
+		keyboard.c().onPressDo({ battle.pelear(bulkUp,leechSeed) }) 
+		keyboard.d().onPressDo({ battle.pelear(braveBird,sceptile.ultimoAtaque()) }) 
 	}
 }
 

@@ -56,9 +56,6 @@ const blazeKick = new Attack (name = "Blaze kick",
 		                           ) 	
 		                           
 		                          
-  object damage {
-	method damage(pokemon,attack,foePokemon) {
-	 return ( ( ( ( (2* pokemon.level() ) /5 ) +2 ) * attack.power() * (pokemon.attack() /foePokemon.defense())) /50) +2
-	}
-}
+  
+
                 
