@@ -5,8 +5,8 @@ class Attack {
 	const property name 
 	const property power 
 	const property type 
-	 
 }  
+	 
 
 const blazeKick = new Attack (name = "Blaze kick", 
 	                               power = 85,

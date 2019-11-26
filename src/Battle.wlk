@@ -25,6 +25,7 @@ object battle {
  }
  
  method pelear(ataque,ataque2) {
+	//TODO: Tal vez sea mejor decirle al ataque que efectivamente ataque (cambiar la responsabilidad)
     blaziken.atacar(ataque,sceptile)
     sceptile.atacar(ataque2,blaziken)
  }
