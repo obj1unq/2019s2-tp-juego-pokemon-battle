@@ -5,8 +5,20 @@ class Attack {
 	const property name 
 	const property power 
 	const property type 
-}  
-	 
+	
+	method formulaDeDanio(pokemon1,pokemon2) {
+		//TODO: Ojo con repetir lógica -> El if antes de tiempo
+		if( ( pokemon1.attack() - pokemon2.defense() ) > 100 )  {
+		   2.times { _ => self.daniarPokemon(pokemon2) } 
+		}
+		else { self.daniarPokemon(pokemon2) }
+	}
+	
+	
+	method daniarPokemon(pokemon) {
+	  pokemon.recibirDanio(power * 2) 	
+  }  
+} 
 
 const blazeKick = new Attack (name = "Blaze kick", 
 	                               power = 85,

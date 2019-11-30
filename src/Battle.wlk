@@ -27,7 +27,9 @@ object battle {
  method pelear(ataque,ataque2) {
 	//TODO: Tal vez sea mejor decirle al ataque que efectivamente ataque (cambiar la responsabilidad)
     blaziken.atacar(ataque,sceptile)
+    sceptile.saleSiEsDerrotadoPor(blaziken,1500,2000)
     sceptile.atacar(ataque2,blaziken)
+    blaziken.saleSiEsDerrotadoPor(sceptile,2500,3000)
  }
  
 }
@@ -39,10 +41,10 @@ object config {
 	method configurarTeclas() {
 		
 		// Ataques de blaziken 
-		keyboard.a().onPressDo({ battle.pelear(blazeKick,sceptile.primerAtaque()) })
-		keyboard.b().onPressDo({ battle.pelear(highJumpKick,dragonPulse) })
-		keyboard.c().onPressDo({ battle.pelear(bulkUp,leechSeed) }) 
-		keyboard.d().onPressDo({ battle.pelear(braveBird,sceptile.ultimoAtaque()) }) 
+		keyboard.a().onPressDo({ battle.pelear(blaziken.primerAtaque(),sceptile.primerAtaque()) })
+		keyboard.b().onPressDo({ battle.pelear(blaziken.segundoAtaque(),sceptile.segundoAtaque()) })
+		keyboard.c().onPressDo({ battle.pelear(blaziken.tercerAtaque(),sceptile.tercerAtaque()) }) 
+		keyboard.d().onPressDo({ battle.pelear(blaziken.ultimoAtaque(),sceptile.ultimoAtaque()) }) 
 	}
 }
 
